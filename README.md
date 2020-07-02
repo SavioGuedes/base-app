@@ -1,4 +1,6 @@
-# Base App ![](https://img.shields.io/badge/development-%20in%20progress-green)
+# Base App 
+
+![](https://img.shields.io/badge/development-%20in%20progress-green)
 
 A Android Kotlin application which implements MVVM Pattern to start projects from it.
 
