@@ -1,5 +1,7 @@
 # Base App
 
+[![Platform](https://img.shields.io/badge/platform-Android-green.svg)](http://developer.android.com/index.html)
+
 A Android Kotlin application which implements MVVM Pattern to start projects from it.
 
 ## Architecture Components:
