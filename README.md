@@ -1,6 +1,6 @@
 # Base App
 
-Base App is a mobile application developed on native Android which implements MVVM Pattern to start projects from it.
+A mobile application developed on native Android which implements MVVM Pattern to start projects from it.
 
 ## Architecture Components:
 
