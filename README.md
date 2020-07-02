@@ -1,6 +1,6 @@
 # Base App
 
-A native Android application which implements MVVM Pattern to start projects from it.
+A Android Kotlin application which implements MVVM Pattern to start projects from it.
 
 ## Architecture Components:
 
