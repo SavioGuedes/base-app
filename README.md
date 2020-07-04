@@ -1,6 +1,8 @@
-# Base App
+# Base App 
 
-Base App is a mobile application developed on native Android which implements MVVM Pattern to start projects from it.
+![](https://img.shields.io/badge/development-%20in%20progress-green)
+
+A Android Kotlin application which implements MVVM Pattern to start projects from it.
 
 ## Architecture Components:
 
