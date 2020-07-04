@@ -1,12 +1,14 @@
 package com.example.baseapp.ui.main
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.example.baseapp.R
+import kotlinx.android.synthetic.main.main_fragment.*
 
 class MainFragment : Fragment() {
 
@@ -23,8 +25,15 @@ class MainFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
-        // TODO: Use the ViewModel
-    }
+        viewModel = ViewModelProvider(
+            this,
+            MainViewModel.MainViewModelFactory(MainRepository())
+        ).get(MainViewModel::class.java)
 
+        viewModel.moviesLiveData.observe(viewLifecycleOwner, Observer { movies ->
+            mainTextViewMovies.text = movies[0].title
+        })
+
+        viewModel.getMovies()
+    }
 }
