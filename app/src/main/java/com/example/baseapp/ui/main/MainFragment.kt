@@ -6,9 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import com.example.baseapp.R
 import kotlinx.android.synthetic.main.main_fragment.*
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainFragment : Fragment() {
 
@@ -16,7 +16,7 @@ class MainFragment : Fragment() {
         fun newInstance() = MainFragment()
     }
 
-    private lateinit var viewModel: MainViewModel
+    private val viewModel: MainViewModel by viewModel()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
@@ -25,15 +25,12 @@ class MainFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(
-            this,
-            MainViewModel.MainViewModelFactory(MainRepository())
-        ).get(MainViewModel::class.java)
 
         viewModel.moviesLiveData.observe(viewLifecycleOwner, Observer { movies ->
-            mainTextViewMovies.text = movies[0].title
+            mainTextViewMovies.text = movies.map { movie ->
+                "${movie.id} - ${movie.title}"
+            }.toString()
         })
-
         viewModel.getMovies()
     }
 }

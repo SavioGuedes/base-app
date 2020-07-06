@@ -2,7 +2,6 @@ package com.example.baseapp.ui.main
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -18,13 +17,6 @@ class MainViewModel(private val repository: MainRepository) : ViewModel() {
                 repository.getMovies()
             }
             moviesLiveData.value = movies
-        }
-    }
-
-    class MainViewModelFactory(private val repository: MainRepository) : ViewModelProvider.Factory {
-        override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-            @Suppress("UNCHECKED_CAST")
-            return MainViewModel(repository) as T
         }
     }
 }
