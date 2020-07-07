@@ -5,10 +5,14 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
 
-class MainApiDataSource : MainRepository {
+class MovieRepository(
+    private val movieApi: MovieApi,
+    private val movieDb: MovieDao
+) : Repository <List<Movie>> {
 
-    override suspend fun getMovies(): List<Movie> {
+    override suspend fun getData(): List<Movie> {
         return withContext(Dispatchers.Default){
+            movieApi.getMovies()
             delay(2000)
             listOf(Movie(1, "Movie 01"))
         }
