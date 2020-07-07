@@ -12,3 +12,4 @@ A Android Kotlin application which implements MVVM Pattern to start projects fro
 * [Room](https://developer.android.com/topic/libraries/architecture/room)
 * [Retrofit](https://square.github.io/retrofit/)
 * [Lifecycle](https://developer.android.com/topic/libraries/architecture/lifecycle)
+* [Koin](https://insert-koin.io/)
