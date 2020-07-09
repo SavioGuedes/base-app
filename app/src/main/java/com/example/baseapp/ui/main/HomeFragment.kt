@@ -27,7 +27,7 @@ class HomeFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
 
         viewModel.moviesLiveData.observe(viewLifecycleOwner, Observer { animes ->
-            mainTextViewMovies.text = animes[0].data[0].attributes.canonicalTitle
+            mainTextViewMovies.text = animes.data[0].attributes.canonicalTitle
         })
         viewModel.getAnimes()
     }

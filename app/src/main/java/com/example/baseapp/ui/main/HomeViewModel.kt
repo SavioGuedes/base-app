@@ -11,7 +11,7 @@ import kotlinx.coroutines.withContext
 
 class HomeViewModel(private val repository: AnimeRepository) : ViewModel() {
 
-    val moviesLiveData = MutableLiveData<List<Anime>>()
+    val moviesLiveData = MutableLiveData<Anime>()
 
     fun getAnimes(){
         CoroutineScope(Dispatchers.Main).launch{
@@ -19,7 +19,7 @@ class HomeViewModel(private val repository: AnimeRepository) : ViewModel() {
                 repository.getData()
             }
 
-            moviesLiveData.value = listOf(animes)
+            moviesLiveData.value = animes
         }
     }
 }
