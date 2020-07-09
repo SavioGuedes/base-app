@@ -10,13 +10,13 @@ import com.example.baseapp.R
 import kotlinx.android.synthetic.main.main_fragment.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class MainFragment : Fragment() {
+class HomeFragment : Fragment() {
 
     companion object {
-        fun newInstance() = MainFragment()
+        fun newInstance() = HomeFragment()
     }
 
-    private val viewModel: MainViewModel by viewModel()
+    private val viewModel: HomeViewModel by viewModel()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
@@ -26,11 +26,9 @@ class MainFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        viewModel.moviesLiveData.observe(viewLifecycleOwner, Observer { movies ->
-            mainTextViewMovies.text = movies.map { movie ->
-                "${movie.id} - ${movie.title}"
-            }.toString()
+        viewModel.moviesLiveData.observe(viewLifecycleOwner, Observer { animes ->
+            mainTextViewMovies.text = animes[0].data[0].attributes.canonicalTitle
         })
-        viewModel.getMovies()
+        viewModel.getAnimes()
     }
 }

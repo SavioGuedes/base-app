@@ -2,23 +2,24 @@ package com.example.baseapp.ui.main
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.baseapp.data.model.Movie
-import com.example.baseapp.data.repository.MovieRepository
+import com.example.baseapp.data.model.Anime
+import com.example.baseapp.data.repository.AnimeRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class MainViewModel(private val repository: MovieRepository) : ViewModel() {
+class HomeViewModel(private val repository: AnimeRepository) : ViewModel() {
 
-    val moviesLiveData = MutableLiveData<List<Movie>>()
+    val moviesLiveData = MutableLiveData<List<Anime>>()
 
-    fun getMovies(){
+    fun getAnimes(){
         CoroutineScope(Dispatchers.Main).launch{
-            val movies = withContext(Dispatchers.Default) {
+            val animes = withContext(Dispatchers.Default) {
                 repository.getData()
             }
-            moviesLiveData.value = movies
+
+            moviesLiveData.value = listOf(animes)
         }
     }
 }

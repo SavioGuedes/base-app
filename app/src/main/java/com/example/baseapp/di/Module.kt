@@ -1,29 +1,38 @@
 package com.example.baseapp.di
 
-import com.example.baseapp.data.repository.MovieApi
-import com.example.baseapp.data.repository.MovieDao
-import com.example.baseapp.data.repository.MovieRepository
-import com.example.baseapp.ui.main.MainViewModel
+import com.example.baseapp.data.repository.AnimeApi
+import com.example.baseapp.data.repository.AnimeRepository
+import com.example.baseapp.ui.main.HomeViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 val mainModule = module {
-    factory {
-        MovieRepository(get(), get())
-    }
-
-    factory {
-        MovieApi()
-    }
-
-    factory {
-        MovieDao()
-    }
 
     viewModel {
-        MainViewModel(
+        HomeViewModel(
             repository = get()
             //TODO: add navigation as injection
         )
+    }
+
+    factory {
+        AnimeRepository(get())
+    }
+
+    fun provideAnimeApi(retrofit: Retrofit): AnimeApi {
+        return retrofit.create(AnimeApi::class.java)
+    }
+
+    factory {
+        provideAnimeApi(get())
+    }
+
+    factory {
+        Retrofit.Builder()
+            .baseUrl("https://kitsu.io/api/edge/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
     }
 }
