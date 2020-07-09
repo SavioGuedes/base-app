@@ -1,15 +1,15 @@
-package com.example.baseapp.ui.main
+package com.example.baseapp.ui.home.animes
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.baseapp.data.model.Anime
-import com.example.baseapp.data.repository.AnimeRepository
+import com.example.baseapp.data.repository.animes.AnimesRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class HomeViewModel(private val repository: AnimeRepository) : ViewModel() {
+class AnimesViewModel(private val repository: AnimesRepository) : ViewModel() {
 
     val moviesLiveData = MutableLiveData<Anime>()
 
