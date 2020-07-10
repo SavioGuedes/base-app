@@ -27,7 +27,7 @@ class AnimesAdapter(
     class AnimesViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bindView(anime: Data){
             val attributes = anime.attributes
-            itemView.anime_title_item_list.text = attributes.canonicalTitle
+            itemView.anime_title_item_list.text = attributes.titles.enJp
         }
     }
 }

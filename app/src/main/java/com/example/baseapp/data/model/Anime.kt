@@ -15,9 +15,7 @@ data class Data(
     @SerializedName("links")
     val links: Links,
     @SerializedName("attributes")
-    val attributes: Attributes,
-    @SerializedName("relationships")
-    val relationships: Relationships
+    val attributes: Attributes
 )
 
 data class Links(
@@ -44,8 +42,6 @@ data class Attributes(
     val abbreviatedTitles: Any,
     @SerializedName("averageRating")
     val averageRating: Any,
-    @SerializedName("ratingFrequencies")
-    val ratingFrequencies: RatingFrequencies,
     @SerializedName("userCount")
     val userCount: Int,
     @SerializedName("favoritesCount")
@@ -66,8 +62,6 @@ data class Attributes(
     val subtype: String,
     @SerializedName("status")
     val status: String,
-    @SerializedName("posterImage")
-    val posterImage: PosterImage,
     @SerializedName("coverImage")
     val coverImage: Any,
     @SerializedName("episodeCount")
@@ -82,9 +76,6 @@ data class Attributes(
     val nsfw: Boolean
 )
 
-class Relationships(
-)
-
 data class Titles(
     @SerializedName("en")
     val en: String,
@@ -92,10 +83,4 @@ data class Titles(
     val enJp: String,
     @SerializedName("ja_jp")
     val jaJp: String
-)
-
-class RatingFrequencies(
-)
-
-class PosterImage(
 )
