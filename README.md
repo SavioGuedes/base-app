@@ -10,6 +10,10 @@ A Android Kotlin application which implements MVVM Pattern to start projects fro
 * [LiveData](https://developer.android.com/topic/libraries/architecture/livedata)
 * [Coroutines](https://developer.android.com/kotlin/coroutines)
 * [Room](https://developer.android.com/topic/libraries/architecture/room)
-* [Retrofit](https://square.github.io/retrofit/)
 * [Lifecycle](https://developer.android.com/topic/libraries/architecture/lifecycle)
 * [Koin](https://insert-koin.io/)
+
+## Libraries:
+
+* [Retrofit](https://square.github.io/retrofit/)
+* [Glide](https://bumptech.github.io/glide/)

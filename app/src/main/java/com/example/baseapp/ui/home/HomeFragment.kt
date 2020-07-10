@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.baseapp.R
 import com.example.baseapp.ui.home.animes.AnimesAdapter
 import com.example.baseapp.ui.home.animes.AnimesViewModel
@@ -32,7 +33,7 @@ class HomeFragment : Fragment() {
         viewModel.moviesLiveData.observe(viewLifecycleOwner, Observer { animes ->
             animes.let { anime ->
                 with(home_animes_recyclerview){
-                    layoutManager = LinearLayoutManager(context)
+                    layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
                     adapter = AnimesAdapter(anime.data)
                 }
             }

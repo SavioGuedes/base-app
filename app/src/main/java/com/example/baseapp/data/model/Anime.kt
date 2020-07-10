@@ -62,6 +62,8 @@ data class Attributes(
     val subtype: String,
     @SerializedName("status")
     val status: String,
+    @SerializedName("posterImage")
+    val posterImage: PosterImage,
     @SerializedName("coverImage")
     val coverImage: Any,
     @SerializedName("episodeCount")
@@ -83,4 +85,9 @@ data class Titles(
     val enJp: String,
     @SerializedName("ja_jp")
     val jaJp: String
+)
+
+data class PosterImage(
+    @SerializedName("original")
+    val image: String
 )

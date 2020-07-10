@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Base App</string>
+    <string name="popularity_rank">Popularity Rank</string>
 </resources>
