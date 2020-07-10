@@ -1,11 +1,16 @@
 package com.example.baseapp.data.repository.animes
 
 import com.example.baseapp.data.model.Anime
-import retrofit2.Call
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface AnimesApi {
 
-    @GET("trending/anime")
-    suspend fun getAnimes() : Anime
+    @GET("anime")
+    suspend fun getAnimes(
+        @Query("sort")
+        sort: String,
+        @Query("page[limit]")
+        pageLimit: Int
+    ) : Anime
 }

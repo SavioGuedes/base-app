@@ -11,7 +11,7 @@ class AnimesRepository(
 
     override suspend fun getData(): Anime {
         return withContext(Dispatchers.Default){
-            animesApi.getAnimes()
+            animesApi.getAnimes("popularityRank", 20)
         }
     }
 }
