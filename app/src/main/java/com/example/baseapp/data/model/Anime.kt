@@ -41,7 +41,7 @@ data class Attributes(
     @SerializedName("abbreviatedTitles")
     val abbreviatedTitles: Any,
     @SerializedName("averageRating")
-    val averageRating: Any,
+    val averageRating: String,
     @SerializedName("userCount")
     val userCount: Int,
     @SerializedName("favoritesCount")

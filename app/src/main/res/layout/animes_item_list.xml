@@ -36,17 +36,45 @@
                 android:id="@+id/anime_title_item_list"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:paddingTop="24dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="24dp"
                 android:textColor="@android:color/white"
-                android:textSize="18sp"
+                android:textSize="14sp"
                 android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/anime_average_item_list"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Attack on Titan" />
+
+            <TextView
+                android:id="@+id/anime_average_item_list"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="4dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="24dp"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/anime_icon_item_list"
+                app:layout_constraintStart_toEndOf="@+id/anime_title_item_list"
+                tools:text="18.05" />
+
+            <ImageView
+                android:id="@+id/anime_icon_item_list"
+                android:layout_width="19dp"
+                android:layout_height="19dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="24dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_star"
+                android:tint="@color/ageTextColor"
+                tools:ignore="ContentDescription"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:text="Attack on Titan" />
+                app:layout_constraintStart_toEndOf="@+id/anime_average_item_list" />
 
             <TextView
                 android:id="@+id/anime_age_item_list"

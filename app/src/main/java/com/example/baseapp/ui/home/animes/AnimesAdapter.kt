@@ -33,6 +33,7 @@ class AnimesAdapter(
                 .into(itemView.anime_img_item_list)
             itemView.anime_title_item_list.text = attributes.titles.enJp
             itemView.anime_age_item_list.text = attributes.ageRatingGuide
+            itemView.anime_average_item_list.text = attributes.averageRating
         }
     }
 }
