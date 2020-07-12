@@ -30,6 +30,7 @@ class AnimesAdapter(
             val attributes = anime.attributes
             Glide.with(itemView.context)
                 .load(attributes.posterImage.image)
+                .placeholder(R.color.colorHomeBg)
                 .into(itemView.anime_img_item_list)
             itemView.anime_title_item_list.text = attributes.titles.enJp
             itemView.anime_age_item_list.text = attributes.ageRatingGuide

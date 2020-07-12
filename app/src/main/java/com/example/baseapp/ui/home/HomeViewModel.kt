@@ -1,4 +1,4 @@
-package com.example.baseapp.ui.home.animes
+package com.example.baseapp.ui.home
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -9,9 +9,9 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
-class AnimesViewModel(private val repository: AnimesRepository) : ViewModel() {
+class HomeViewModel(private val repository: AnimesRepository) : ViewModel() {
 
-    val moviesLiveData = MutableLiveData<Anime>()
+    val animesLiveData = MutableLiveData<Anime>()
 
     fun getAnimes(){
         CoroutineScope(Dispatchers.Main).launch{
@@ -19,7 +19,7 @@ class AnimesViewModel(private val repository: AnimesRepository) : ViewModel() {
                 repository.getData()
             }
 
-            moviesLiveData.value = animes
+            animesLiveData.value = animes
         }
     }
 }

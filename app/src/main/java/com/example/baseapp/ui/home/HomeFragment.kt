@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.baseapp.R
 import com.example.baseapp.ui.home.animes.AnimesAdapter
-import com.example.baseapp.ui.home.animes.AnimesViewModel
 import kotlinx.android.synthetic.main.home_fragment.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -20,7 +19,7 @@ class HomeFragment : Fragment() {
         fun newInstance() = HomeFragment()
     }
 
-    private val viewModel: AnimesViewModel by viewModel()
+    private val viewModel: HomeViewModel by viewModel()
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
@@ -30,7 +29,7 @@ class HomeFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        viewModel.moviesLiveData.observe(viewLifecycleOwner, Observer { animes ->
+        viewModel.animesLiveData.observe(viewLifecycleOwner, Observer { animes ->
             animes.let { anime ->
                 with(home_animes_recyclerview){
                     layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)

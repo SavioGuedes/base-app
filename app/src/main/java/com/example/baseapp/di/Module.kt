@@ -2,7 +2,7 @@ package com.example.baseapp.di
 
 import com.example.baseapp.data.repository.animes.AnimesApi
 import com.example.baseapp.data.repository.animes.AnimesRepository
-import com.example.baseapp.ui.home.animes.AnimesViewModel
+import com.example.baseapp.ui.home.HomeViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit
@@ -11,7 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 val mainModule = module {
 
     viewModel {
-        AnimesViewModel(
+        HomeViewModel(
             repository = get()
             //TODO: add navigation as injection
         )
