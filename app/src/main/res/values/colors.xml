@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#181b21</color>
-    <color name="colorPrimaryDark">#000000</color>
-    <color name="colorAccent">#03DAC5</color>
-
-    <color name="colorHomeBg">#181b21</color>
-    <color name="ageTextColor">#f79901</color>
+    <color name="black">#181b21</color>
+    <color name="blue">#282C35</color>
+    <color name="yellow">#f79901</color>
 </resources>

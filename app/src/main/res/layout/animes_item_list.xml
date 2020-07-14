@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/colorHomeBg"
+    android:background="@color/black"
     android:layout_width="275dp"
     android:layout_height="match_parent"
     android:layout_marginStart="16dp"
@@ -30,7 +30,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/image_infos_bg"
+            android:background="@drawable/bg_image_infos"
             android:layout_gravity="bottom">
 
             <TextView
@@ -71,7 +71,7 @@
                 android:layout_marginTop="24dp"
                 android:scaleType="fitXY"
                 android:src="@drawable/ic_star"
-                android:tint="@color/ageTextColor"
+                android:tint="@color/yellow"
                 tools:ignore="ContentDescription"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -84,7 +84,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
-                android:textColor="@color/ageTextColor"
+                android:textColor="@color/yellow"
                 android:textSize="12sp"
                 app:layout_constraintTop_toBottomOf="@+id/anime_title_item_list"
                 app:layout_constraintBottom_toBottomOf="parent"
