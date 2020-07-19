@@ -29,7 +29,7 @@ class HomeFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        viewModel.animesLiveData.observe(viewLifecycleOwner, Observer { animes ->
+        viewModel.getAnimes().observe(viewLifecycleOwner, Observer { animes ->
             animes.let { anime ->
                 with(home_animes_recyclerview){
                     layoutManager = LinearLayoutManager(context, RecyclerView.HORIZONTAL, false)
@@ -37,7 +37,5 @@ class HomeFragment : Fragment() {
                 }
             }
         })
-
-        viewModel.getAnimes()
     }
 }

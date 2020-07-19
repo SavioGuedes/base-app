@@ -1,5 +1,6 @@
 package com.example.baseapp.ui.home
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.baseapp.data.model.Anime
@@ -11,15 +12,22 @@ import kotlinx.coroutines.withContext
 
 class HomeViewModel(private val repository: AnimesRepository) : ViewModel() {
 
-    val animesLiveData = MutableLiveData<Anime>()
+    private val animesLiveData: MutableLiveData<Anime> by lazy {
+        MutableLiveData<Anime>().also {
+            loadAnimes()
+        }
+    }
 
-    fun getAnimes(){
+    private fun loadAnimes(){
         CoroutineScope(Dispatchers.Main).launch{
             val animes = withContext(Dispatchers.Default) {
                 repository.getData()
             }
-
             animesLiveData.value = animes
         }
+    }
+
+    fun getAnimes(): LiveData<Anime> {
+        return animesLiveData
     }
 }
