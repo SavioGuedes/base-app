@@ -4,6 +4,11 @@
 
 A Android Kotlin application which implements MVVM Pattern to start projects from it.
 
+Home Screen
+<p align="left">
+  <img src="https://user-images.githubusercontent.com/18077200/87886264-ee44a980-c9f1-11ea-95e0-d9f0f2ddaf75.jpg" width="250">
+</p>
+
 ## Architecture Components:
 
 * [Navigation](https://developer.android.com/topic/libraries/architecture/navigation) - Navigating between fragments, activities or other components
