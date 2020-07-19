@@ -6,9 +6,8 @@
         <item name="colorAccent">@color/yellow</item>
     </style>
 
-    <style name="BottomNavigation">
-        <item name="android:background">@drawable/bg_bottom_menu</item>
-        <item name="itemIconTint">@color/yellow</item>
-        <item name="itemTextColor">@color/yellow</item>
+    <style name="BottomNavigation" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="colorPrimary">@color/yellow</item>
+        <item name="colorOnSurface">@android:color/white</item>
     </style>
 </resources>
