@@ -16,9 +16,10 @@ Home Screen
 * [Lifecycle](https://developer.android.com/topic/libraries/architecture/lifecycle) - Perform actions in response to a change in the lifecycle status of another component
 * [Coroutines](https://developer.android.com/kotlin/coroutines) - Simplify code that executes asynchronously
 * [Room](https://developer.android.com/topic/libraries/architecture/room) - Abstraction layer over SQLite to database access
-* [Koin](https://insert-koin.io/) - Dependency injection
+* [Koin](https://insert-koin.io) - Dependency injection
 
 ## Libraries:
 
-* [Retrofit](https://square.github.io/retrofit/) - Perform HTTP protocols from a REST API
-* [Glide](https://bumptech.github.io/glide/) - Image loading library
+* [Retrofit](https://square.github.io/retrofit) - Perform HTTP protocols from a REST API
+* [Glide](https://bumptech.github.io/glide) - Image loading library
+* [Material](https://material.io/develop/android) - Customize components layout
