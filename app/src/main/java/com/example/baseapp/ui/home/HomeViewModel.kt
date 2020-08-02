@@ -18,12 +18,21 @@ class HomeViewModel(private val repository: AnimesRepository) : ViewModel() {
         }
     }
 
+    val erroLiveData: MutableLiveData<String> by lazy {
+        MutableLiveData<String>()
+    }
+
     private fun loadAnimes(){
         CoroutineScope(Dispatchers.Main).launch{
-            val animes = withContext(Dispatchers.Default) {
-                repository.getData()
+            try {
+                val animes = withContext(Dispatchers.Default) {
+                    repository.getData()
+                }
+                animesLiveData.value = animes
             }
-            animesLiveData.value = animes
+            catch (e: Exception){
+                erroLiveData.value = e.message
+            }
         }
     }
 

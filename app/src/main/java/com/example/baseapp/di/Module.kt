@@ -13,7 +13,6 @@ val mainModule = module {
     viewModel {
         HomeViewModel(
             repository = get()
-            //TODO: add navigation as injection
         )
     }
 
