@@ -4,7 +4,7 @@ import com.example.baseapp.data.model.Anime
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface AnimesApi {
+interface AnimesService {
 
     @GET("anime")
     suspend fun getAnimes(

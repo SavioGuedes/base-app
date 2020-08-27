@@ -1,17 +1,18 @@
 package com.example.baseapp.data.repository.animes
 
+import com.example.baseapp.data.api.ApiResult
 import com.example.baseapp.data.model.Anime
 import com.example.baseapp.data.repository.Repository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
 class AnimesRepository(
-    private val animesApi: AnimesApi
+    private val animesDataSource: AnimesDataSource
 ) : Repository<Anime> {
 
-    override suspend fun getData(): Anime {
+    override suspend fun getData(): ApiResult<Anime> {
         return withContext(Dispatchers.Default){
-            animesApi.getAnimes("popularityRank", 20)
+            animesDataSource.fetchAnimes("popularityRank", 20)
         }
     }
 }

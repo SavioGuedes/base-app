@@ -1,5 +1,7 @@
 package com.example.baseapp.data.repository
 
-interface Repository<T> {
-    suspend fun getData() : T
+import com.example.baseapp.data.api.ApiResult
+
+interface Repository<out T : Any> {
+    suspend fun getData() : ApiResult<T>
 }
