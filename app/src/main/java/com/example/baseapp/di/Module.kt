@@ -5,6 +5,7 @@ import com.example.baseapp.data.repository.animes.AnimesDataSource
 import com.example.baseapp.data.repository.animes.AnimesService
 import com.example.baseapp.data.repository.animes.AnimesRepository
 import com.example.baseapp.ui.home.HomeViewModel
+import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 import retrofit2.Retrofit
@@ -21,7 +22,7 @@ val mainModule = module {
     }
 
     factory {
-        AnimesDataSource(get(), ErrorHandler())
+        AnimesDataSource(get(), ErrorHandler(androidContext()))
     }
 
     fun provideAnimeApi(retrofit: Retrofit): AnimesService {

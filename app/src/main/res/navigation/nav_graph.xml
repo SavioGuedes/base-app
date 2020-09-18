@@ -10,5 +10,21 @@
         android:id="@+id/navigation_home"
         android:name="com.example.baseapp.ui.home.HomeFragment"
         android:label="home_fragment"
-        tools:layout="@layout/home_fragment" />
+        tools:layout="@layout/home_fragment" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_error"
+            app:destination="@id/navigation_error" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_error"
+        android:name="com.example.baseapp.ui.home.error.ErrorFragment"
+        android:label="error_fragment"
+        tools:layout="@layout/error_fragment">
+
+        <argument
+            android:name="error_text"
+            app:argType="string"
+            app:nullable="false" />
+    </fragment>
 </navigation>

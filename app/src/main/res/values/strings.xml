@@ -2,4 +2,9 @@
     <string name="app_name">Base App</string>
     <string name="popularity_rank">Popularity Rank</string>
     <string name="title_home">Home</string>
+    <string name="error_title">Ooops…</string>
+    <string name="connection_error">Parece que você perdeu a conexão, verifique e tente novamente.</string>
+    <string name="service_error">Hum… Algo deu errado.</string>
+    <string name="client_error">Solicitação inválida, entre em contato com suporte.</string>
+    <string name="unknown_error">Um erro do sistema ou sua conexão podem estar impedindo a comunicação, verifique e tente novamente.</string>
 </resources>
